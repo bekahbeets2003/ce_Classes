@@ -48,9 +48,8 @@ if __name__ == '__main__':
     city_tuples = zip(city_names, city_states, city_pop)
     for city_tup in city_tuples:
         name, state, pop = city_tup
-        city = City(name, state, pop) # instance of City class
+        city = City(name, state, pop)  # instance of City class
         cities.append(city)
         print(city)
-
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
