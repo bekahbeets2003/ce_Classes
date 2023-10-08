@@ -1,11 +1,10 @@
-
 class Pokemon(object):
     attack = 12
     defense = 10
     health = 15
     p_type = "Normal"
 
-    def __init__(self, name, level = 5):
+    def __init__(self, name, level=5):
         self.evolve = None
         self.defense_boost = None
         self.attack_boost = None
@@ -19,7 +18,7 @@ class Pokemon(object):
         self.defense_up()
         self.health_up()
         self.level = self.level + 1
-        if self.level%self.evolve == 0:
+        if self.level % self.evolve == 0:
             return self.level, "Evolved!"
         else:
             return self.level
@@ -57,13 +56,15 @@ class Pokemon(object):
 
     def __str__(self):
         self.update()
-        return "Pokemon name: {}, Type: {}, Level: {}, Attack: {}".format(self.name, self.p_type, self.level, self.attack)
+        return "Pokemon name: {}, Type: {}, Level: {}, Attack: {}".format(self.name, self.p_type, self.level,
+                                                                          self.attack)
 
 
 class Grass_Pokemon(Pokemon):
     attack = 15
     defense = 14
     health = 12
+    p_type = 'Grass'
 
     def __init__(self, name, level=5):
         super().__init__(name, level)
@@ -82,7 +83,7 @@ class Grass_Pokemon(Pokemon):
         if self.level >= 10:
             self.attack = self.attack + self.attack_boost
 
-        if self.level%self.evolve == 0:
+        if self.level % self.evolve == 0:
             return self.level, "Evolved!"
         else:
             return self.level
@@ -94,7 +95,7 @@ class Grass_Pokemon(Pokemon):
         self.evolve = 12
 
     def moves(self):
-        self.p_moves = ["razor leaf", "synthesis", "petal dance"]
+        self.p_moves = ["razor leaf", "synthesis", "petal dance", "petal blizzard"]
 
     def action(self):
         return '{} knows a lot of different moves!'.format(self.name)
